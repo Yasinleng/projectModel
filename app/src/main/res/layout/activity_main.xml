@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/souvenirEditBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="3333333333333333333333"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/container"
+        android:layout_below="@id/souvenirEditBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/souvenirEditBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:paddingBottom="@dimen/dp_150">
+
+
+            <TextView
+                android:id="@+id/souvenirEditName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="事件名称"
+                android:textStyle="bold"
+                android:textColor="@color/color_989898"
+                android:textSize="@dimen/sp_16"
+                android:layout_marginTop="@dimen/dp_29"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/dp_18"/>
+
+            <EditText
+                android:id="@+id/souvenirEdit"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_49"
+                android:layout_marginTop="@dimen/dp_14"
+                app:layout_constraintTop_toBottomOf="@id/souvenirEditName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="@dimen/dp_18"
+                android:layout_marginEnd="@dimen/dp_18"
+                android:maxLength="10"
+                android:lines="1"
+                android:paddingStart="@dimen/dp_14"
+                android:paddingEnd="@dimen/dp_14"
+                android:hint="例如：自己来到这个世界…"
+                android:textSize="@dimen/sp_14"
+                android:textColor="@color/white"
+                android:textColorHint="@color/color_363636"/>
+
+
+            <TextView
+                android:id="@+id/souvenirDateHint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/souvenirEdit"
+                android:layout_marginTop="@dimen/dp_24"
+                android:textColor="@color/color_989898"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                android:text="事件日"
+                app:layout_constraintStart_toStartOf="@id/souvenirEditName" />
+
+
+            <TextView
+                android:id="@+id/souvenirDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/dp_12"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_14"
+                android:textStyle="bold"
+                android:textColorHint="@color/color_363636"
+                android:hint="点击设置时间"
+                android:gravity="end"
+                app:layout_constraintTop_toTopOf="@id/souvenirDateHint"
+                app:layout_constraintBottom_toBottomOf="@id/souvenirDateHint"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/dp_18"
+                android:background="@color/transparent"/>
+
+            <TextView
+                android:id="@+id/souvenirEventIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/souvenirDateHint"
+                android:layout_marginTop="@dimen/dp_24"
+                android:textColor="@color/color_989898"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                android:text="选择事件图标"
+                app:layout_constraintStart_toStartOf="@id/souvenirEditName" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/souvenirIconSel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never"
+                android:layout_marginStart="@dimen/dp_18"
+                android:layout_marginEnd="@dimen/dp_18"
+                android:layout_marginTop="@dimen/dp_14"
+                app:layout_constraintTop_toBottomOf="@id/souvenirEventIcon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+            <TextView
+                android:id="@+id/souvenirEventTop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/souvenirIconSel"
+                android:layout_marginTop="@dimen/dp_24"
+                android:textColor="@color/color_989898"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                android:text="置顶该事件"
+                app:layout_constraintStart_toStartOf="@id/souvenirEditName" />
+
+<!--            <com.sx.xiaoai.widget.switchbutton.SwitchButton-->
+<!--                android:id="@+id/eventTopSwitch"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="@dimen/dp_24"-->
+<!--                android:layout_marginEnd="18dp"-->
+<!--                android:paddingEnd="3dp"-->
+<!--                android:paddingStart="@dimen/dp_3"-->
+<!--                android:translationX="2.67dp"-->
+<!--                app:kswBackDrawable="@drawable/switch_track"-->
+<!--                app:kswThumbDrawable="@drawable/switch_thumb"-->
+<!--                app:kswThumbHeight="@dimen/dp_15"-->
+<!--                app:kswThumbRangeRatio="2"-->
+<!--                app:kswThumbWidth="@dimen/dp_15"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="@id/souvenirEventTop"-->
+<!--                app:layout_constraintBottom_toBottomOf="@id/souvenirEventTop"/>-->
+
+
+            <TextView
+                android:id="@+id/souvenirEventRepeat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/souvenirEventTop"
+                android:layout_marginTop="@dimen/dp_24"
+                android:textColor="@color/color_989898"
+                android:drawablePadding="@dimen/dp_4"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                android:text="事件日重复"
+                app:layout_constraintStart_toStartOf="@id/souvenirEditName" />
+
+<!--            <com.sx.xiaoai.widget.switchbutton.SwitchButton-->
+<!--                android:id="@+id/eventRepeatSwitch"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="@dimen/dp_24"-->
+<!--                android:layout_marginEnd="18dp"-->
+<!--                android:paddingEnd="3dp"-->
+<!--                android:paddingStart="@dimen/dp_3"-->
+<!--                android:translationX="2.67dp"-->
+<!--                app:kswBackDrawable="@drawable/switch_track"-->
+<!--                app:kswThumbDrawable="@drawable/switch_thumb"-->
+<!--                app:kswThumbHeight="@dimen/dp_15"-->
+<!--                app:kswThumbRangeRatio="2"-->
+<!--                app:kswThumbWidth="@dimen/dp_15"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="@id/souvenirEventRepeat"-->
+<!--                app:layout_constraintBottom_toBottomOf="@id/souvenirEventRepeat"/>-->
+
+
+            <RadioGroup
+                android:id="@+id/souvenirEventRepeatSelect"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginTop="@dimen/dp_21"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/souvenirEventRepeat"
+                app:layout_constraintStart_toStartOf="@id/souvenirEditName"
+                app:layout_constraintEnd_toEndOf="@id/souvenirDate"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/eventRepeat1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:textStyle="bold"
+                    android:text="每周重复"/>
+
+                <RadioButton
+                    android:id="@+id/eventRepeat2"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:text="每月重复"/>
+
+                <RadioButton
+                    android:id="@+id/eventRepeat3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:textStyle="bold"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:text="每年重复"/>
+
+            </RadioGroup>
+
+
+            <TextView
+                android:id="@+id/souvenirEventPre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/souvenirEventRepeatSelect"
+                android:layout_marginTop="@dimen/dp_24"
+                android:textColor="@color/color_989898"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                android:text="正数日+1"
+                app:layout_constraintStart_toStartOf="@id/souvenirEditName" />
+
+<!--            <com.sx.xiaoai.widget.switchbutton.SwitchButton-->
+<!--                android:id="@+id/eventPreSwitch"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="@dimen/dp_24"-->
+<!--                android:layout_marginEnd="18dp"-->
+<!--                android:paddingEnd="3dp"-->
+<!--                android:paddingStart="@dimen/dp_3"-->
+<!--                android:translationX="2.67dp"-->
+<!--                app:kswBackDrawable="@drawable/switch_track"-->
+<!--                app:kswThumbDrawable="@drawable/switch_thumb"-->
+<!--                app:kswThumbHeight="@dimen/dp_15"-->
+<!--                app:kswThumbRangeRatio="2"-->
+<!--                app:kswThumbWidth="@dimen/dp_15"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="@id/souvenirEventPre"-->
+<!--                app:layout_constraintBottom_toBottomOf="@id/souvenirEventPre"/>-->
+
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/souvenirPre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="souvenirEventPre,eventPreSwitch"/>
+
+
+            <TextView
+                android:id="@+id/souvenirEventRemind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/souvenirEventPre"
+                android:layout_marginTop="@dimen/dp_24"
+                android:textColor="@color/color_989898"
+                android:drawablePadding="@dimen/dp_4"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                android:text="事件日提醒"
+                app:layout_constraintStart_toStartOf="@id/souvenirEditName" />
+
+<!--            <com.sx.xiaoai.widget.switchbutton.SwitchButton-->
+<!--                android:id="@+id/eventRemindSwitch"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="@dimen/dp_24"-->
+<!--                android:layout_marginEnd="18dp"-->
+<!--                android:paddingEnd="3dp"-->
+<!--                android:paddingStart="@dimen/dp_3"-->
+<!--                android:translationX="2.67dp"-->
+<!--                app:kswBackDrawable="@drawable/switch_track"-->
+<!--                app:kswThumbDrawable="@drawable/switch_thumb"-->
+<!--                app:kswThumbHeight="@dimen/dp_15"-->
+<!--                app:kswThumbRangeRatio="2"-->
+<!--                app:kswThumbWidth="@dimen/dp_15"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="@id/souvenirEventRemind"-->
+<!--                app:layout_constraintBottom_toBottomOf="@id/souvenirEventRemind"/>-->
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/souvenirRemind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:constraint_referenced_ids="souvenirTime,souvenirTimeHint,souvenirEventRemindSelect"/>
+
+            <TextView
+                android:id="@+id/souvenirTimeHint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/souvenirEventRemind"
+                android:layout_marginTop="@dimen/dp_24"
+                android:textColor="@color/color_989898"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                android:text="提醒时间与日期"
+                app:layout_constraintStart_toStartOf="@id/souvenirEditName" />
+
+
+            <TextView
+                android:id="@+id/souvenirTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/dp_12"
+                android:textColor="@color/white"
+                android:gravity="end"
+                android:textSize="@dimen/sp_14"
+                android:textStyle="bold"
+                android:textColorHint="@color/color_363636"
+                android:hint="点击设置时间"
+                app:layout_constraintTop_toTopOf="@id/souvenirTimeHint"
+                app:layout_constraintBottom_toBottomOf="@id/souvenirTimeHint"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/dp_18"
+                android:background="@color/transparent"/>
+
+
+            <RadioGroup
+                android:id="@+id/souvenirEventRemindSelect"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_50"
+                android:layout_marginTop="@dimen/dp_21"
+                app:layout_constraintTop_toBottomOf="@id/souvenirTimeHint"
+                app:layout_constraintStart_toStartOf="@id/souvenirEditName"
+                app:layout_constraintEnd_toEndOf="@id/souvenirDate"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/eventRemind1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:textStyle="bold"
+                    android:text="前 1 天"/>
+
+                <RadioButton
+                    android:id="@+id/eventRemind2"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:text="前 3 天"/>
+
+                <RadioButton
+                    android:id="@+id/eventRemind3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:textStyle="bold"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:text="前 5 天"/>
+
+                <RadioButton
+                    android:id="@+id/eventRemind4"
+                    android:layout_width="0dp"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:layout_height="match_parent"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:button="@null"
+                    android:text="当天"/>
+
+            </RadioGroup>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/btnDel"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:text="删除事件"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_marginStart="@dimen/dp_18"
+        android:layout_marginEnd="@dimen/dp_18"
+        android:textColor="@color/white"
+        android:layout_alignParentBottom="true"
+        android:textSize="@dimen/sp_16"
+        android:layout_marginBottom="@dimen/dp_30"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnSave"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+    <TextView
+        android:id="@+id/btnSave"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:text="保存编辑"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/dp_18"
+        android:layout_marginEnd="@dimen/dp_18"
+        android:textColor="@color/color_FF222222"
+        android:textSize="@dimen/sp_16"
+        android:layout_marginBottom="@dimen/dp_30"
+        app:layout_constraintStart_toEndOf="@id/btnDel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
